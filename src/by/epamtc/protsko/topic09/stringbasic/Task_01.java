@@ -16,14 +16,14 @@ public class Task_01 {
         }
     }
 
-    public static String getEvenCharacterString(String primaryString) {
+    public static String evenCharacterString(String primaryString) {
         if (evenLineCharacter.length() == 0) {
             divisionEvenAndOddCharacter(primaryString);
         }
         return evenLineCharacter.toString();
     }
 
-    public static String getOddCharacterString(String primaryString) {
+    public static String oddCharacterString(String primaryString) {
         if (oddLineCharacter.length() == 0) {
             divisionEvenAndOddCharacter(primaryString);
         }
@@ -35,7 +35,7 @@ public class Task_01 {
     public static void main(String[] args) {
         String line = "I like java";
 
-        System.out.println(getOddCharacterString(line));
-        System.out.println(getEvenCharacterString(line));
+        System.out.println(oddCharacterString(line));
+        System.out.println(evenCharacterString(line));
     }
 }

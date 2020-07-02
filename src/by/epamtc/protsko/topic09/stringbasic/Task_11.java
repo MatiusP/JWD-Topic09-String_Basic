@@ -4,11 +4,12 @@ package by.epamtc.protsko.topic09.stringbasic;
 
 public class Task_11 {
 
-    public static String getStringLineWithWordsInReverseOrder(String stringLine) {
+    public static String stringLineWithWordsInReverseOrder(String stringLine) {
         StringBuilder stringLineWithWordsInReverseOrder = new StringBuilder();
         String[] stringLineWords = stringLine.replaceAll("[^\\w]", " ")
                 .replaceAll("[\\s]+", "*")
                 .split("\\*");
+
         for (int i = stringLineWords.length - 1; i >= 0; i--) {
             String word = stringLineWords[i];
             if (i != 0) {
@@ -24,6 +25,6 @@ public class Task_11 {
     //----- check result -----
     public static void main(String[] args) {
         String line = "Java is one of the most popular programming language :;?!-.,%&#$@";
-        System.out.println(getStringLineWithWordsInReverseOrder(line));
+        System.out.println(stringLineWithWordsInReverseOrder(line));
     }
 }

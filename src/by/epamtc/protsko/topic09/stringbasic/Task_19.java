@@ -5,7 +5,9 @@ package by.epamtc.protsko.topic09.stringbasic;
 public class Task_19 {
 
     public static boolean isStringLinePalindrome(String stringLine) {
-        String stringLineForCompares = stringLine.replaceAll("[^\\p{L}]", " ")
+        String notWordRegex = "[^\\p{L}]";
+
+        String stringLineForCompares = stringLine.replaceAll(notWordRegex, " ")
                 .replaceAll("[\\s]+", "");
 
         StringBuilder reverseStringLine = new StringBuilder(stringLineForCompares).reverse();

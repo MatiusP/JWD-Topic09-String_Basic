@@ -3,8 +3,8 @@ package by.epamtc.protsko.topic09.stringbasic;
 //Вычислить процентное соотношение строчных и прописных букв
 
 public class Task_02 {
-    static int countUppercaseLetters = 0;
-    static int countLowercaseLetters = 0;
+    private static int countUppercaseLetters = 0;
+    private static int countLowercaseLetters = 0;
 
     private static void countUppercaseAndLowercaseLetter(String stringLine) {
         String onlyLettersLine = stringLine.replaceAll("[\\W\\d_]", "");
@@ -19,25 +19,27 @@ public class Task_02 {
         }
     }
 
-    public static double getPercentageRatioUppercaseAndLowercaseLetter(String stringLine) {
+    public static double percentageRatioUppercaseAndLowercaseLetter(String stringLine) {
         countUppercaseAndLowercaseLetter(stringLine);
         if (countUppercaseLetters == 0) {
             System.out.println("In string line only lowercase letters.");
             return 0;
-        } else if (countLowercaseLetters == 0) {
-            System.out.println("In string line only uppercase letters");
-            return 100;
-        } else {
-            return ((double) countUppercaseLetters / countLowercaseLetters) * 100;
         }
+
+        if (countLowercaseLetters == 0) {
+            System.out.println("In string line only uppercase letters.");
+            return 100;
+        }
+
+        return ((double) countUppercaseLetters / countLowercaseLetters) * 100;
     }
 
 
     //----- check result -----
     public static void main(String[] args) {
         String line1 = "iiii Java hello  ";
-        System.out.printf("Percentage ratio Uppercase and Lowercase letters = %5.2f"
-                , getPercentageRatioUppercaseAndLowercaseLetter(line1));
+        System.out.printf("Percentage ratio Uppercase and Lowercase letters = %5.2f",
+                percentageRatioUppercaseAndLowercaseLetter(line1));
     }
 
 }

@@ -4,7 +4,8 @@ package by.epamtc.protsko.topic09.stringbasic;
 
 public class Task_03 {
 
-    public static String getUniqueSymbols(String stringLine) {
+    public static String uniqueSymbols(String stringLine) {
+
         StringBuilder stringLineWithoutDuplicateSymbols = new StringBuilder();
         char[] stringLineSymbols = stringLine.toCharArray();
 
@@ -20,7 +21,7 @@ public class Task_03 {
     //----- check result -----
     public static void main(String[] args) {
         String stringLine = "Java program!";
-        System.out.println(getUniqueSymbols(stringLine));
+        System.out.println(uniqueSymbols(stringLine));
 
 
     }

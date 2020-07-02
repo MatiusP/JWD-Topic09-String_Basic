@@ -4,7 +4,7 @@ package by.epamtc.protsko.topic09.stringbasic;
 
 public class Task_04 {
 
-    public static String getSymbolsFrequencyCount(String stringLine) {
+    public static String symbolsFrequencyCount(String stringLine) {
         StringBuilder lineSymbolsFrequencyCount = new StringBuilder();
         String copyStringLine = stringLine;
 
@@ -26,7 +26,7 @@ public class Task_04 {
     //----- check result -----
     public static void main(String[] args) {
         String line = "I have to do my homework";
-        System.out.println(getSymbolsFrequencyCount(line));
+        System.out.println(symbolsFrequencyCount(line));
     }
 
 

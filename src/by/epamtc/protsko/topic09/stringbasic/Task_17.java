@@ -6,8 +6,9 @@ public class Task_17 {
 
     public static String deleteLastWordFromStringLine(String stringLine) {
         StringBuilder stringLineWithoutLastWord = new StringBuilder(stringLine);
+        String notWordRegex = "[^\\p{L}#_]";
 
-        String stringLineForMethod = stringLine.replaceAll("[^\\p{L}#_]", " ")
+        String stringLineForMethod = stringLine.replaceAll(notWordRegex, " ")
                 .replaceAll("[\\s]+", " ").trim();
 
         String lastWord = stringLineForMethod.substring((stringLineForMethod.lastIndexOf(" ") + 1));

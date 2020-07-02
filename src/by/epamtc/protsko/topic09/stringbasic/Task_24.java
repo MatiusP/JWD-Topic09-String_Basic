@@ -4,8 +4,10 @@ package by.epamtc.protsko.topic09.stringbasic;
 
 public class Task_24 {
 
-    public static String[] getWordsFromStringLine(String stringLine) {
-        return stringLine.replaceAll("[^a-zA-ZА-Яа-я0-9]", " ")
+    public static String[] wordsFromStringLine(String stringLine) {
+        String notWordRegex = "[^a-zA-ZА-Яа-я0-9]";
+
+        return stringLine.replaceAll(notWordRegex, " ")
                 .replaceAll("[\\s]+", " ")
                 .split(" ");
     }
@@ -13,8 +15,8 @@ public class Task_24 {
 
     //----- check result -----
     public static void main(String[] args) {
-        String line = "Java is !!! %^&  one of the most      popular programming ! ###    fds  language Процко";
-        String[] stringLineWords = getWordsFromStringLine(line);
+        String line = "Java is !!! %^&  one of the most      popular programming ! ###    fds  language";
+        String[] stringLineWords = wordsFromStringLine(line);
         for (String stringLineWord : stringLineWords) {
             System.out.println(stringLineWord);
         }

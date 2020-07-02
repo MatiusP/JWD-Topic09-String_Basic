@@ -5,7 +5,6 @@ package by.epamtc.protsko.topic09.stringbasic;
 public class Task_22 {
 
     public static String deleteWordsGivenLength(String stringLine, int wordLength) {
-
         return stringLine
                 .replaceAll("\\b[\\w]{" + wordLength + "," + wordLength + "}\\b", "");
     }

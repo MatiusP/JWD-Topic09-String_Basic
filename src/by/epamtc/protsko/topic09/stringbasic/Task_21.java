@@ -4,7 +4,7 @@ package by.epamtc.protsko.topic09.stringbasic;
 
 public class Task_21 {
 
-    public static String getSumBigIntegerNumbers(String firstNumber, String secondNumber) {
+    public static String sumBigIntegerNumbers(String firstNumber, String secondNumber) {
         StringBuilder sumBigIntegerNumbers = new StringBuilder();
         int carryOver = 0;
 
@@ -35,9 +35,9 @@ public class Task_21 {
 
     //----- check result -----
     public static void main(String[] args) {
-        String firstNumber = "9999999999";
-        String secondNumber = "3333333333";
+        String firstNumber = "99999999991231321321";
+        String secondNumber = "3333333333123658";
 
-        System.out.println(getSumBigIntegerNumbers(firstNumber, secondNumber));
+        System.out.println(sumBigIntegerNumbers(firstNumber, secondNumber));
     }
 }

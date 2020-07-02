@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class Task_10 {
 
-    public static int getCountSubstringInStringLine(String stringLine, String substring) {
+    public static int countSubstringInStringLine(String stringLine, String substring) {
         int countSubstring = 0;
         Pattern pattern = Pattern.compile(substring);
         Matcher matcher = pattern.matcher(stringLine);
@@ -22,6 +22,6 @@ public class Task_10 {
     //----- check result -----
     public static void main(String[] args) {
         String line1 = "java java. Program language Java";
-        System.out.println(getCountSubstringInStringLine(line1, "java"));
+        System.out.println(countSubstringInStringLine(line1, "java"));
     }
 }

@@ -9,14 +9,14 @@ import java.util.regex.Pattern;
 
 public class Task_13_14_15 {
 
-    private static String[] getStringLineWords(String stringLine) {
+    private static String[] stringLineWords(String stringLine) {
         return stringLine.replaceAll("[^\\w]", " ")
                 .replaceAll("[\\s]+", "*")
                 .split("\\*");
     }
 
-    public static int getLengthLongestWord(String stringLine) {
-        String[] stringLineWords = getStringLineWords(stringLine);
+    public static int lengthLongestWord(String stringLine) {
+        String[] stringLineWords = stringLineWords(stringLine);
         int maxWordLength = stringLineWords[0].length();
 
         for (String stringLineWord : stringLineWords) {
@@ -29,8 +29,8 @@ public class Task_13_14_15 {
 
 
     //Найти длину самого короткого слова в строке
-    public static int getLengthShortestWord(String stringLine) {
-        String[] stringLineWords = getStringLineWords(stringLine);
+    public static int lengthShortestWord(String stringLine) {
+        String[] stringLineWords = stringLineWords(stringLine);
         int minWordLength = stringLineWords[0].length();
 
         for (String stringLineWord : stringLineWords) {
@@ -41,10 +41,10 @@ public class Task_13_14_15 {
         return minWordLength;
     }
 
-    public static String[] getArrayLongestWords(String stringLine) {
+    public static String[] arrayLongestWords(String stringLine) {
         StringBuilder longestWords = new StringBuilder();
-        String[] stringLineWords = getStringLineWords(stringLine);
-        int maxWordLength = getLengthLongestWord(stringLine);
+        String[] stringLineWords = stringLineWords(stringLine);
+        int maxWordLength = lengthLongestWord(stringLine);
 
         for (String stringLineWord : stringLineWords) {
             if (stringLineWord.length() == maxWordLength) {
@@ -57,12 +57,13 @@ public class Task_13_14_15 {
 
     // Замена в самом длинном слове буквы "a" на букву "b"
     public static String changeSymbolsInLongestWords(String stringLine) {
-        String[] stringLineLongestWords = getArrayLongestWords(stringLine);
+        String[] stringLineLongestWords = arrayLongestWords(stringLine);
         String changedStringLine = stringLine;
 
         for (String stringLineLongestWord : stringLineLongestWords) {
             Pattern pattern = Pattern.compile(stringLineLongestWord);
             Matcher matcher = pattern.matcher(stringLine);
+
             while (matcher.find()) {
                 String changedWord = matcher.group().replaceAll("a", "b");
                 changedStringLine = changedStringLine.replace(stringLineLongestWord, changedWord);
@@ -76,7 +77,7 @@ public class Task_13_14_15 {
         String line = "Java javac javac, java! java - ^ javasg javava";
         System.out.println(changeSymbolsInLongestWords(line));
 
-        System.out.println("Length of shortest word in string line = " + getLengthShortestWord(line));
-        System.out.println("Count words in string line = " + getStringLineWords(line).length);
+        System.out.println("Length of shortest word in string line = " + lengthShortestWord(line));
+        System.out.println("Count words in string line = " + stringLineWords(line).length);
     }
 }

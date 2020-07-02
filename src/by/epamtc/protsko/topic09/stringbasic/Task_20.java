@@ -9,6 +9,7 @@ public class Task_20 {
 
     public static String changeSubstringInString(String stringLine, String oldSubstring, String newSubstring) {
         String stringLineWithChangeSubstring = stringLine;
+
         if (stringLine.contains(oldSubstring)) {
             Pattern pattern = Pattern.compile(oldSubstring);
             Matcher matcher = pattern.matcher(stringLineWithChangeSubstring);

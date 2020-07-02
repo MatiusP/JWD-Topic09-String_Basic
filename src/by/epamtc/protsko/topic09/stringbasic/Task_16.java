@@ -11,6 +11,7 @@ public class Task_16 {
         StringBuilder swapWordsLine = new StringBuilder();
 
         List<String> stringLineWords = Arrays.asList(stringLine.split(" "));
+
         if (stringLineWords.contains(firstWord) && stringLineWords.contains(secondWord)) {
             for (String stringLineWord : stringLineWords) {
                 if (!stringLineWord.equalsIgnoreCase(firstWord) && !stringLineWord.equalsIgnoreCase(secondWord)) {
